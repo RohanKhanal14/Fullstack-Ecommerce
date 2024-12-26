@@ -1,12 +1,15 @@
 import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import Loader from "./components/Loader";
-import Login from "./pages /Login";
 import Navbar from "./components/Navbar";
 
 const Home = lazy(() => import("./pages /Home"));
 const Search = lazy(() => import("./pages /Search"));
 const Cart = lazy(() => import("./pages /Cart"));
+const Shipping = lazy(() => import("./pages /Shipping"));
+const Login = lazy(() => import("./pages /Login"));
+const Orders = lazy(() => import("./pages /Orders"));
+
 
 // Admin Imports
 const Dashboard = lazy(() => import("./pages /admin/dashboard"));
@@ -30,12 +33,25 @@ const TransactionManagement = lazy(
 const App = () => {
   return (
     <Suspense fallback={<Loader />}>
-      <Navbar/>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<Search />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/orders" element={<Orders />} />
+
+        {/* <Route path="/product/:id" element={<Product />} /> */}
+        {/* <Route path="/category/:category" element={<Category />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/order/:id" element={<Order />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/register" element={<Register />} /> */}
+
+        {/* not logged in route */}
         <Route path="/login" element={<Login />} />
+
+        {/* logged route */}
+        <Route path="/shipping" element={<Shipping />} />
 
         {/* Admin Routes */}
         <Route
@@ -51,10 +67,12 @@ const App = () => {
           <Route path="/admin/product" element={<Products />} />
           <Route path="/admin/customer" element={<Customers />} />
           <Route path="/admin/transaction" element={<Transaction />} />
+
           {/* Charts */}
           <Route path="/admin/chart/bar" element={<Barcharts />} />
           <Route path="/admin/chart/pie" element={<Piecharts />} />
           <Route path="/admin/chart/line" element={<Linecharts />} />
+          
           {/* Apps */}
           <Route path="/admin/app/coupon" element={<Coupon />} />
           <Route path="/admin/app/stopwatch" element={<Stopwatch />} />

@@ -12,14 +12,15 @@
     > div {
       width: 100%;
       @include flex(column, flex-start, stretch, 0.2rem);
-      > input,
-      > select {
-        @include inputStyle;
-        border: 1px solid rgba(162, 162, 162, 0.53);
-        border-radius: 5px;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      > form {
+        > input,
+        > select {
+          @include inputStyle;
+          border: 1px solid rgba(162, 162, 162, 0.53);
+          border-radius: 5px;
+          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
       }
-
       > p {
         text-align: center;
         margin: 2rem;

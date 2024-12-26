@@ -25,9 +25,11 @@ const ProductCard = ({
       <img src={imageUrl} alt={name} />
       <p>{name}</p>
       <span>${price}</span>
-      <button onClick={() => handler()}>
-        <FaPlus />
-      </button>
+      <div>
+        <button onClick={() => handler()}>
+          <FaPlus />
+        </button>
+      </div>
     </div>
   );
 };
