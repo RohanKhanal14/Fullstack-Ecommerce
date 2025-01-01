@@ -8,13 +8,13 @@ export const newUser = async (
   next: NextFunction
 ) => {
   try {
-    const { name, email, photo, gender, role, _id, dob } = req.body;
+    return next(new Error("Something went "));
+    const { name, email, photo, gender, _id, dob } = req.body;
     const user = await User.create({
       name,
       email,
       photo,
       gender,
-      role,
       _id,
       dob,
     });

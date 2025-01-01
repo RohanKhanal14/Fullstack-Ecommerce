@@ -40,6 +40,10 @@ $color3: rgb(0, 104, 136);
   color: rgb(0, 195, 0);
 }
 
+.yellow{
+  color: rgb(255, 255, 0);
+}
+
 @import "admin-styles/mixin";
 @import "home";
 @import "cart";
